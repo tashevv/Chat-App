@@ -4,3 +4,5 @@ chat_app/\
 ├── READ ME.txt\
 ├── client.py\
 └── server.py
+
+![demo](chat_app_screenshot.png)
