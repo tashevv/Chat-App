@@ -10,4 +10,4 @@ chat_app/\
 ├── run.bat		# Run this to start\
 └── server.py
 
-![demo](chat_app_screenshot.png)
+![demo](chat_room_screenshot.png)
