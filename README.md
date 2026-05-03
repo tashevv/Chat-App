@@ -1,6 +1,6 @@
 # CHAT ROOM v2.0
 
-Chat room written in Python with persistent chats via JSON serialization.
+Chat room app written in Python with persistent chats via JSON serialization.
 
 chat_app/\
 ├── READ ME.txt\
