@@ -10,7 +10,7 @@ import threading
 class ChatUI:
     def __init__(self):
         self.window = tk.Tk()
-        self.window.title("Chat Room")
+        self.window.title("Chat Room v2.0")
         self.window.geometry("700x450")
         self.window.minsize(700, 450)
 
