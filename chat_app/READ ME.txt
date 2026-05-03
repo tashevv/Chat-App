@@ -1,0 +1,11 @@
+CHAT ROOM v2.0
+
+chat_app/
+├── READ ME.txt
+├── client.py
+├── data/
+│   ├── Gaming.json
+│   ├── General.json
+│   └── Random.json
+├── run.bat		# Run this to start
+└── server.py
