@@ -1,13 +1,19 @@
 import socket
 import threading
 import json
+import ssl
 
 HOST = "0.0.0.0"
 PORT = 5555
 
+context = ssl.SSLContext(ssl.PROTOCOL_TLS_SERVER)
+context.load_cert_chain(certfile="cert.pem", keyfile="key.pem")
+
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 server.bind((HOST, PORT))
 server.listen()
+
+server = context.wrap_socket(server, server_side=True)
 
 print(f"[SERVER STARTED] Listening on port {PORT}")
 
@@ -15,9 +21,10 @@ clients = []  # (client, channel, name)
 
 
 def broadcast(packet, sender=None):
-    """Send JSON packet to all clients in same channel"""
+    target_channel = packet.get("channel", "General")
+
     for client, channel, name in clients:
-        if client != sender:
+        if client != sender and channel == target_channel:
             try:
                 client.send((json.dumps(packet) + "\n").encode())
             except:
