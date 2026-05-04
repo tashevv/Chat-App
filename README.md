@@ -4,12 +4,17 @@ Chat room app written in Python with persistent chats via JSON serialization.
 
 chat_app/\
 ├── READ ME.txt\
+├── cert.pem\
 ├── client.py\
 ├── data/\
 │   ├── Gaming.json\
 │   ├── General.json\
 │   └── Random.json\
-├── run.bat		# Run this to start\
+├── generate_cert.py\
+├── key.pem\
+├── lib/\
+│   └── venv/\
+├── run.bat	# Run this to start\
 └── server.py
 
 ![demo](chat_room_screenshot.png)
