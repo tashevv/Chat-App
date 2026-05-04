@@ -5,7 +5,7 @@ import json
 import os
 import socket
 import threading
-
+import ssl
 
 class ChatUI:
     def __init__(self):
@@ -161,7 +161,19 @@ class ChatUI:
             ip = self.host_ip.get()
             port = int(self.port.get())
 
-            self.client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+            context = ssl.create_default_context()
+
+            # Allow self-signed certs (for development)
+            context.check_hostname = False
+            context.verify_mode = ssl.CERT_NONE
+
+            raw_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+
+            self.client_socket = context.wrap_socket(
+                raw_socket,
+                server_hostname=ip
+            )
+
             self.client_socket.connect((ip, port))
 
             self.connected = True
@@ -213,9 +225,11 @@ class ChatUI:
                     text = packet.get("message", "")
 
                     if msg_type == "system":
-                        formatted = f"*** {text} ***"
+                        timestamp = datetime.now().strftime("%H:%M")
+                        formatted = f"[{timestamp}] *** {text} ***"
                     else:
-                        formatted = f"[{channel}] {name}: {text}"
+                        timestamp = datetime.now().strftime("%H:%M")
+                        formatted = f"[{timestamp}] {name}: {text}"
 
                     if channel in self.channels:
                         self.channels[channel].append(formatted)
