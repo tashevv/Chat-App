@@ -1,4 +1,4 @@
-# CHAT ROOM v2.0
+# CHAT ROOM v1.0
 
 Chat room app written in Python with persistent chats via JSON serialization.
 
