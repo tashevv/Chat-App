@@ -1,5 +1,7 @@
 # Chat Client And Server
 
+Chat client and server app.
+
 chat_app/\
 ├── .git/\
 ├── READ ME.txt\
