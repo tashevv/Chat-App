@@ -1,20 +1,21 @@
-# CHAT ROOM v1.0
-
-Chat room app written in Python with persistent chats via JSON serialization.
+# Chat Client And Server
 
 chat_app/\
+├── .git/\
 ├── READ ME.txt\
+├── Run client.bat\
+├── Run server.bat\
 ├── cert.pem\
+├── chat_app_screenshot.png\
 ├── client.py\
 ├── data/\
 │   ├── Gaming.json\
 │   ├── General.json\
 │   └── Random.json\
 ├── generate_cert.py\
+├── icon.ico\
 ├── key.pem\
 ├── lib/\
-│   └── venv/\
-├── run.bat	# Run this to start\
 └── server.py
 
 ![demo](chat_app_screenshot.png)
