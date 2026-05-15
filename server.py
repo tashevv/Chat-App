@@ -90,9 +90,9 @@ class ServerUI:
         self.window = window
         self.state = state
 
-        self.window.title("Chat Server Dashboard")
-        self.window.geometry("700x500")
-        self.window.minsize(600, 400)
+        self.window.title("Chat Server")
+        self.window.geometry("700x450")
+        self.window.minsize(700, 450)
 
         if os.name == "nt" and os.path.exists("icon.ico"):
             self.window.iconbitmap("icon.ico")

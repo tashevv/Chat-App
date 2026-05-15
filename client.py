@@ -27,7 +27,7 @@ class Client:
 
     def __init__(self):
         self.window = tk.Tk()
-        self.window.title("Chat Room")
+        self.window.title("Chat Client")
 
         # Only load icon on Windows where .ico is natively supported
         if os.name == "nt" and os.path.exists("icon.ico"):
