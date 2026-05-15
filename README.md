@@ -5,8 +5,8 @@ Chat client and server app.
 chat_app/\
 ├── .git/\
 ├── READ ME.txt\
-├── Run client.bat\
-├── Run server.bat\
+├── Run client.bat	# Run this to start a client\
+├── Run server.bat	# Run this to start a server\
 ├── cert.pem\
 ├── chat_app_screenshot.png\
 ├── client.py\
